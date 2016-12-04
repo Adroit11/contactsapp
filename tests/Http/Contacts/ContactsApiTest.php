@@ -25,8 +25,8 @@ class ContactsApiTest extends TestCase
 		$this->json('GET', 'api/v1/contacts')->seeJsonEquals(
 			[
 				'data' => [
-						['uid'=> 1, 'first_name' => 'foo', 'last_name' => 'bar', 'phone_number' => '1111111111'],
-						['uid' => 2, 'first_name' => 'bar', 'last_name' => 'foo', 'phone_number' => '2222222222']
+						['uid'=> 1, 'first_name' => 'Foo', 'last_name' => 'Bar', 'phone_number' => '1111111111'],
+						['uid' => 2, 'first_name' => 'Bar', 'last_name' => 'Foo', 'phone_number' => '2222222222']
 
 				]
 			]		
@@ -52,8 +52,8 @@ class ContactsApiTest extends TestCase
 			[
 				'contact' => [
 					'uid' => $firstContact->id,
-					'first_name' => $firstContact->name,
-					'last_name' => $firstContact->last_name,
+					'first_name' => ucfirst($firstContact->name),
+					'last_name' => ucfirst($firstContact->last_name),
 					'phone_number' => $firstContact->phone_number
 				]
 
@@ -88,8 +88,8 @@ class ContactsApiTest extends TestCase
 			[
 				'contact' => [
 					'uid' => $contact->id,
-					'first_name' => 'foo',
-					'last_name' => 'bar',
+					'first_name' => 'Foo',
+					'last_name' => 'Bar',
 					'phone_number' => '8888888888'
 				]
 
@@ -110,8 +110,8 @@ class ContactsApiTest extends TestCase
 			[
 				'contact' => [
 					'uid' => $contact->id,
-					'first_name' => 'foo',
-					'last_name' => 'bar',
+					'first_name' => 'Foo',
+					'last_name' => 'Bar',
 					'phone_number' => '8888888888'
 				]
 
@@ -129,7 +129,7 @@ class ContactsApiTest extends TestCase
 		$contacts = $contactsRepo->getAll();
 		$this->assertCount(2, $contacts);
 		$contact = $contacts->first();		
-		$this->json('DELETE', 'api/v1/contacts', ['uid' => $contact->id])->seeJsonEquals([
+		$this->json('DELETE', 'api/v1/contacts/'.$contact->id)->seeJsonEquals([
 			'message' => 'Contact removed.'
 		]);
 		$contacts = $contactsRepo->getAll();

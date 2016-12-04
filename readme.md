@@ -10,12 +10,12 @@
 6. create a database for the app using mysql called contactapp
 7. Update .env variables:
 
-DB_DATABASE=contactapp		
-DB_USERNAME=root
-DB_PASSWORD=yourpassword
+* DB_DATABASE=contactapp		
+* DB_USERNAME=root
+* DB_PASSWORD=yourpassword
 
 8.run php artisan migrate --seed
-9.Run php artisan serve
+9. Run php artisan serve
 10.You are good to go
 
 ## Instructions for testing

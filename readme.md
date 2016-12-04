@@ -11,16 +11,16 @@
 7. Update .env variables:
 
 DB_DATABASE=contactapp		
-DB_USERNAME=root\n
+DB_USERNAME=root
 DB_PASSWORD=yourpassword
 
-8.run php artisan migrate --seed\n
-9.Run php artisan serve\n
-10.You are good to go!
+8.run php artisan migrate --seed
+9.Run php artisan serve
+10.You are good to go
 
 ## Instructions for testing
 
 You must truncate your tables before running tests. 
 
-1.run php artisan migrate:refresh\n
+1.run php artisan migrate:refresh
 2.run phpunit

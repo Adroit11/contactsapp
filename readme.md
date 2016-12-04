@@ -8,19 +8,19 @@
 4. Go inside root folder and rename the .env.example file to .env 
 5. run php artisan key:generate
 6. create a database for the app using mysql called contactapp
-5. Update .env variables:
+7. Update .env variables:
 
 DB_DATABASE=contactapp		
-DB_USERNAME=root
+DB_USERNAME=root\n
 DB_PASSWORD=yourpassword
 
-6.run php artisan migrate --seed
-7.Run php artisan serve
-8.You are good to go!
+8.run php artisan migrate --seed\n
+9.Run php artisan serve\n
+10.You are good to go!
 
 ## Instructions for testing
 
 You must truncate your tables before running tests. 
 
-1.run php artisan migrate:refresh
+1.run php artisan migrate:refresh\n
 2.run phpunit

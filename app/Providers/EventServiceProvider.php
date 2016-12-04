@@ -13,9 +13,21 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\SomeEvent' => [
-            'App\Listeners\EventListener',
+        'App\Events\Api\ValidationFailed' => [
+            'App\Listeners\Api\ReturnValidationErrors',
         ],
+        'App\Events\Api\ObjectCreated' => [
+            'App\Listeners\Api\ReturnCreated'
+        ],
+        'App\Events\Api\ObjectFound' => [
+            'App\Listeners\Api\ReturnFound',
+        ],
+        'App\Events\Api\ObjectUpdated' => [
+            'App\Listeners\Api\ReturnUpdated',
+        ],
+        'App\Events\Api\ObjectDeleted' => [
+            'App\Listeners\Api\ReturnOk',
+        ]
     ];
 
     /**

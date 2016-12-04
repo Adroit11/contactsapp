@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(App\Models\Contact::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Eloquent\Contact::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name,

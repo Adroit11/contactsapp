@@ -1,1 +1,49 @@
-<p>contacts here</p>
+<div class="row" ng-init="sortBy='first_name'" ng-cloak>
+	<div class="col-md-4" ng-include="'views/includes/leftNav.html'"></div>
+	<div class="col-md-8">
+		<div ng-if="cc.contacts.length">
+			<input type="text" ng-model="contactsFilter" class="form-control" placeholder="Filter"/>
+			<br>
+			 <table class="table table-hover">
+			 	<thead>
+			 		<tr>
+			 			<th>
+			 				<span ng-click="sortBy='first_name'; reverse=!reverse" class="glyphicon glyphicon-sort" aria-hidden="true"></span> NAME
+			 			</th>
+			 			<th>
+			 				<span ng-click="sortBy='last_name'; reverse=!reverse" class="glyphicon glyphicon-sort" aria-hidden="true"></span> LAST NAME
+			 			</th>
+			 			<th>
+			 				PHONE NUMBER
+			 			</th>
+			 			<th>
+			 				ACTIONS
+			 			</th>
+			 		</tr>
+			 	</thead>
+			 	<tbody> 
+			 		<tr ng-repeat="contact in cc.contacts | filter:contactsFilter | orderBy:sortBy:reverse">	
+			 			<td>
+			 				{{ contact.first_name }}
+			 			</td>
+			 			<td>
+			 				{{ contact.last_name }}
+			 			</td>
+			 			<td>
+			 				{{ contact.phone_number }}
+			 			</td>
+			 			<td>
+			 				<a href="/#/{{ contact.uid }}" type="button" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+			 				<button ng-click="cc.deleteContact(contact.uid)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+			 			</td>
+			 		</tr>	
+			 	</tbody>
+			 </table>
+		</div>
+	</div>
+</div>
+
+
+
+
+

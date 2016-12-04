@@ -15,6 +15,7 @@ elixir(function(mix) {
     	'libs/angular-messages.js',
     	'app.js',
         'config/routes.js',
-    	'controllers/ContactsController.js'
+    	'controllers/ContactsController.js',
+        'services/ContactsService.js'
     ]);
 });

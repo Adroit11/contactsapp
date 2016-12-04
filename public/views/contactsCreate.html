@@ -1,0 +1,50 @@
+<div class="row" ng-cloak>
+	<div class="col-md-4" ng-include="'views/includes/leftNav.html'"></div>
+	<div class="col-md-8">
+		<form name="createContactForm" ng-submit="cc.createContact(createContactForm.$valid)" novalidate>
+			<div class="form-group" ng-class="{ 'has-error': createContactForm.name.$invalid && createContactForm.name.$touched }">
+				<label for="Contact first name">Name</label>
+				<input 
+					type="text" 
+					name="name"
+					class="form-control"
+					ng-model="cc.contact.name"
+					required>
+					<div class="help-block" ng-messages="createContactForm.name.$error" ng-if="createContactForm.name.$touched">
+			          <p ng-message="required">The contact name is required.</p>			          
+			        </div>				
+			</div>
+			<div class="form-group" ng-class="{ 'has-error': createContactForm.last_name.$invalid && createContactForm.last_name.$touched }">
+				<label for="Contact last name">Last name</label>
+				<input 
+					type="text" 
+					name="last_name"
+					class="form-control"
+					ng-model="cc.contact.last_name"
+					required>
+					<div class="help-block" ng-messages="createContactForm.last_name.$error" ng-if="createContactForm.last_name.$touched">
+			          <p ng-message="required">The contact last name is required.</p>			          
+			        </div>				
+			</div>
+			<div class="form-group" ng-class="{ 'has-error': createContactForm.phone_number.$invalid && createContactForm.phone_number.$touched }">
+				<label for="Contact phone number">Phone number</label>
+				<input 
+					type="number" 
+					name="phone_number"
+					ng-minlength="10" 
+                   	ng-maxlength="10"
+					class="form-control"
+					ng-model="cc.contact.phone_number"
+					required>
+					<div class="help-block" ng-messages="createContactForm.phone_number.$error" ng-if="createContactForm.phone_number.$touched">
+			          <p ng-message="required">The contact phone number is required.</p>
+			          <p ng-message="minlength">The contact phone number must be 10 digits.</p>
+			          <p ng-message="maxlength">The contact phone number must be 10 digits.</p>
+			          <p ng-message="number">The contact phone number must be 10 digits.</p>			          
+			        </div>				
+			</div>
+			<button type="submit" class="btn btn-success" ng-disabled="createContactForm.$invalid"><span class="glyphicon glyphicon-ok"></span> Create</button>
+			<a type="button" class="btn btn-warning" href="/#/"><span class="glyphicon glyphicon-chevron-left"></span> Back</a>
+		</form>		             
+	</div>
+</div>

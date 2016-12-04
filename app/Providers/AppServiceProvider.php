@@ -32,5 +32,10 @@ class AppServiceProvider extends ServiceProvider
             'App\Transformers\Eloquent\Contracts\ContactsTransformerInterface',
             'App\Transformers\Eloquent\ContactsTransformer'
         );
+
+         $this->app->bind(
+            'App\Validators\Contracts\ContactsValidatorInterface',
+            'App\Validators\ContactsValidator'
+        );
     }
 }

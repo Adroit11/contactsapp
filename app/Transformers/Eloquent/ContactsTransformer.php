@@ -11,6 +11,7 @@ class ContactsTransformer extends TransformerAbstract implements Contract
 	public function transform(Contact $contact)
 	{
 		return [
+			'uid' => $contact->id,
 			'first_name' => $contact->name,
 			'last_name' => $contact->last_name,
 			'phone_number' => $contact->phone_number

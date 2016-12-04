@@ -41,9 +41,9 @@ abstract class BaseRepository
         return $this->model->orderBy( $field, $direction );
     }
 
-    public function create( $input )
+    public function create( array $data )
     {
-        return $this->model->create( $input );
+        return $this->model->create( $data );
     } 
 
     public function destroyAll()

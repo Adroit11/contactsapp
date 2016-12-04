@@ -1,0 +1,8 @@
+<ul class="list-group">
+   <a href="/#/" class="list-group-item">
+   	<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Contacts 
+   	<span class="badge">{{ cc.contacts.length }}</span> 
+  </a>
+  <a href="/#/new" class="list-group-item"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add new</a>
+  <a ng-click="cc.refreshContacts()" href="#" class="list-group-item"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Refresh list</a>
+</ul>

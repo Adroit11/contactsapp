@@ -14,9 +14,10 @@
 * DB_USERNAME=root
 * DB_PASSWORD=yourpassword
 
-8.run php artisan migrate --seed
-9. Run php artisan serve
-10.You are good to go
+8. run php artisan migrate --seed
+9. Run gulp 
+10. Run php artisan serve
+11. You are good to go
 
 ## Instructions for testing
 

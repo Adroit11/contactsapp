@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App;
 use Artisan;
+use App\Models\Eloquent\Contact;
 use Illuminate\Http\Request;
 use App\Jobs\Contacts\CreateContact;
 use App\Jobs\Contacts\UpdateContact;
@@ -50,7 +51,7 @@ class ContactsController extends ApiController implements Contract
 	public function refresh()
 	{
 		Artisan::call('migrate:refresh', ['--force' => true,]);
-		Artisan::call('db:seed');
+		factory(Contact::class, 15)->create();
 		return $this->respond('contacts refreshed');
 	}
 }
